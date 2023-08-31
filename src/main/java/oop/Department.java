@@ -2,12 +2,11 @@ package oop;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class Department {
 
 
     private int departmentId;
-    private String departmentName;
+    private final String departmentName;
     private List<Course> courseList;
 
     public Department(int departmentId, String departmentName){

@@ -6,10 +6,13 @@ import java.util.List;
 public class UniversityInfo {
     private static String universityName;
     private static String location;
-    private List<Faculty> faculties;
-    private List<Department> departments;
-    private List<Student> students;
-    private List<Course> courses;
+    private final List<Faculty> faculties;
+    private final List<Department> departments;
+    private final List<Student> students;
+    private final List<Course> courses;
+
+
+    private final List<Person> people;
     public UniversityInfo(String name, String location) {
         UniversityInfo.universityName = name;
         UniversityInfo.location =location;
@@ -17,8 +20,11 @@ public class UniversityInfo {
         departments = new ArrayList<>();
         students = new ArrayList<>();
         courses=new ArrayList<>();
-        String stingFormat=String.format("University Name = %s%n Location = %s", name,location);
+        people=new ArrayList<>();
+        System.out.println("------------------------------------");
+        String stingFormat=String.format("University Name = %s%nLocation = %s",name,location);
         System.out.println(stingFormat);
+        System.out.println("------------------------------------");
     }
 
     public void addFaculty(Faculty faculty) {
@@ -43,5 +49,11 @@ public class UniversityInfo {
     }
     List<Course> getCourses(){
         return courses;
+    }
+    public void addPerson(Person person) {
+        people.add(person);
+    }
+    public List<Person> getPeople() {
+        return people;
     }
 }
